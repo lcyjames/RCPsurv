@@ -57,19 +57,16 @@ This data structure is as follows:
 RCPsurvEST(data, P, m=10, tolerance=10^{-3}, gamma0=NA, beta0=NA, alpha10=NA, alpha20=NA, mu0=NA, sigma0=NA, TRACE=FALSE)
 ```
 This function performs the semiparametric estimation methods of Lee and Wong (2023+). The details of the arguments are as follows:
->- `data` is a data.frame object shown in the above, with columns `id`, `cs`, `Lij`, `Rij`, `DL`,`DI`,`X[1]`,...,`X[P]`,`Z[1]`,...,`Z[Q-1]`
->- `K` is the dimension of parameter gamma; the order of the I-splines equal to (`K`-`deg`+1); `K` must be greater than or equal to `deg`
->- `P` is the dimension of covariate X in the proportional hazards model
->- `Q` is the dimension of covariate Z (without an intercept) plus 1 in the binomial model 
->- `deg` is the degree of polynomial used in the I-splines, set to 3 by default
->- `max.m` is the maximum cluster size in the binomial distribution
->- `M` is the number of nodes used in adaptive Gauss-Hermite quadrature, set to 20 by default
+>- `data` is a data.frame object shown in the above, with columns `id`, `Ti`, `cen`, `X[1]`,...,`X[P]`, `Z`
+>- `P` is the dimension of covariate X, which is also equal to the dimension of gamma0
+>- `m` is the number of nodes used in the Gaussian quadrature rule for truncated normal
 >- `tolerance` is the stopping criterion for the EM algorithm, set to 10^{-3} by default
->- `gam_0` is a vector of positive constants of size `K` for the initial values of gamma, set to be rep(2,K) by default (gam_0=NA)
->- `beta_0` is a vector of constants of size `P` for the initial values of parameter beta, set to be rep(0,P) by default (beta_0=NA)
->- `alpha_0` is a vector of constants of size `Q` for the initial values of parameter alpha, set to be rep(0,Q) by default (alpha_0=NA)
->- `kappa_0` is a constant for the initial values of parameter kappa, set to be 0 by default (kappa_0=NA)
->- `sigma_0` is a constant for the initial values of parameter sigma, set to be 2 by default (sigma_0=NA)
+>- `gamma0` is a vector of constants of size `P` for the initial values of parameter gamma, set to be rep(0,P) by default (gamma0=NA)
+>- `beta0` is a constant for the initial value of parameter beta, set to be 0 by default (beta0=NA)
+>- `alpha10` is a constant for the initial value of parameter alpha1, set to be 0 by default (alpha10=NA)
+>- `alpha20` is a constant for the initial value of parameter alpha2, set to be 0 by default (alpha20=NA)
+>- `mu0` is a constant for the initial value of parameter mu, set to be median of covariate Z by default (mu0=NA)
+>- `sigma0` is a constant for the initial value of parameter sigma, set to be 2 by default (sigma0=NA)
 >- `TRACE` is an option for tracking the converging path of the parameter estimation, set to be FALSE by default
 
 Example:
