@@ -2,8 +2,6 @@
 
 RCPsurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for right-censored data with a random change-point using the method proposed by Lee and Wong (202X) <DOI: [xx.xxxx/xxxx](https://doi.org/xxxx/xxxx)>.
 
-**JointCSsurv** relies on the R-packages `splines2`, `numDeriv`, `statmod`, which are hosted on CRAN.
-
 # How to import the Functions #
 > install.packages("devtools")<br />
 > library(devtools) <br /> 
@@ -15,34 +13,35 @@ RCPsurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for 
 The package contains 2 functions:
 |Functions  | Description|
 |------------- | -------------|
-JointCSsurvSIM  | Generate a data set according to the simulation study in Lee et al. (2022)
-JointCSsurvEST  | Perform the semiparametric estimation methods of Lee et al. (2022)
+RCPsurvSIM  | Generate a data set according to the simulation study in Lee and Wong. (202X)
+RCPsurvEST  | Perform the semiparametric estimation methods of Lee and Wong. (202X)
 
-<ins>**JointCSsurvSIM**</ins>
+<ins>**RCPsurvSIM**</ins>
 
 ```
-JointCSsurvSIM(seed = NA, n, m, beta, alpha, kappa, sigma)
+RCPsurvSIM(seed=NA, n, gamma, beta, alpha1, alpha2, mu, sigma)
 ```
-This function generates a data set according to the model under scenario I of the simulation study in Lee et al. (2022) that takes the arguments:
+This function generates a data set according to the model under scenario I of the simulation study in Lee and Wong (202X) that takes the arguments:
 >- `n` is the sample size
->- `m` is the maximum cluster size in the binomial distribution
->- `beta` is the coefficient in the proportional hazards model
->- `alpha` is the coefficients in the binomial model
->- `kappa` is the coefficient of the random effect
->- `sigma` is the standard deviation of the random effect
+>- `gamma` is the coefficient of X
+>- `beta` is the 'baseline' coefficient of Z
+>- `alpha1` is an intercept added to the regression when Z is greater than the random change-point
+>- `alpha2` is the coefficient of Z added to the regression when Z is greater than the random change-point
+>- `mu` is the mean of the change-point distribution
+>- `sigma` is the standard deviation of the change-point distribution
 
 Example:
 ```
-data <- JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma = 1)
+data <- RCPsurvSIM(seed = 1234, n = 500, gamma = 0.5, beta = -1, alpha1 = 2, alpha2 = 1.5, mu = 1.5, sigma = 0.5)
 head(data)
 
-#   id cs       Lij      Rij DL DI           X          Z
-# 1  1  3 1.5548184 2.194611  0  1  0.08005964 -1.2070657
-# 2  1  3        NA 4.000000  0  0 -0.63140930 -1.2070657
-# 3  1  3 2.3650486 3.344980  0  1 -1.51328812 -1.2070657
-# 4  2  8 0.4422604 1.384112  0  1  1.84246363  0.3592891
-# 5  2  8 1.7613718 2.400782  0  1  1.11236284  0.3592891
-# 6  2  8 1.7778747 2.428052  0  1  0.03266396  0.3592891
+#   id Ti           cen X           Z
+# 1  1 0.004496932   0  1.334176034 1.435799
+# 2  2 0.015786129   1 -1.121502497 3.819158
+# 3  3 0.026820595   1  1.674326510 3.091647
+# 4  4 0.026929615   0 -0.005234058 0.540405
+# 5  5 0.030748594   1  0.011925135 3.015005
+# 6  6 0.039647808   1  0.129085401 3.971592
 ```
 
 This data structure is as follows:
