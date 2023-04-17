@@ -59,13 +59,13 @@ RCPsurvEST(data, P, m=10, tolerance=10^{-3}, gamma0=NA, beta0=NA, alpha10=NA, al
 This function performs the semiparametric estimation methods of Lee and Wong (2023+). The details of the arguments are as follows:
 >- `data` is a data.frame object shown in the above, with columns `id`, `Ti`, `cen`, `X[1]`,...,`X[P]`, `Z`
 >- `P` is the dimension of covariate X, which is also equal to the dimension of gamma0
->- `m` is the number of nodes used in the Gaussian quadrature rule for truncated normal
+>- `m` is the number of nodes used in the Gaussian quadrature rule for truncated normal distributions
 >- `tolerance` is the stopping criterion for the EM algorithm, set to 10^{-3} by default
 >- `gamma0` is a vector of constants of size `P` for the initial values of parameter gamma, set to be rep(0,P) by default (gamma0=NA)
 >- `beta0` is a constant for the initial value of parameter beta, set to be 0 by default (beta0=NA)
 >- `alpha10` is a constant for the initial value of parameter alpha1, set to be 0 by default (alpha10=NA)
 >- `alpha20` is a constant for the initial value of parameter alpha2, set to be 0 by default (alpha20=NA)
->- `mu0` is a constant for the initial value of parameter mu, set to be median of covariate Z by default (mu0=NA)
+>- `mu0` is a constant for the initial value of parameter mu, set to be median of `Z` in `data` by default (mu0=NA)
 >- `sigma0` is a constant for the initial value of parameter sigma, set to be 2 by default (sigma0=NA)
 >- `TRACE` is an option for tracking the converging path of the parameter estimation, set to be FALSE by default
 
