@@ -1,6 +1,6 @@
 # RCPsurv
 
-RCPsurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for right-censored data with a random change-point using the method proposed by Lee and Wong (202X) <DOI: [xx.xxxx/xxxx](https://doi.org/xxxx/xxxx)>.
+RCPsurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for right-censored data with a random change-point using the method proposed by Lee and Wong (2023+) <DOI: [xx.xxxx/xxxx](https://doi.org/xxxx/xxxx)>.
 
 # How to import the Functions #
 > install.packages("devtools")<br />
@@ -21,7 +21,7 @@ RCPsurvEST  | Perform the semiparametric estimation methods of Lee and Wong. (20
 ```
 RCPsurvSIM(seed=NA, n, gamma, beta, alpha1, alpha2, mu, sigma)
 ```
-This function generates a data set according to the model under scenario I of the simulation study in Lee and Wong (202X) that takes the arguments:
+This function generates a data set according to the model under scenario I of the simulation study in Lee and Wong (2023+) that takes the arguments:
 >- `n` is the sample size
 >- `gamma` is the coefficient of X
 >- `beta` is the 'baseline' coefficient of Z
@@ -46,14 +46,10 @@ head(data)
 
 This data structure is as follows:
 >- `id` is the sample identifier
->- `cs` is the size within a specific cluster
->- `Lij` is the left endpoint of an observed interval, which takes the value NA for right-censored observations
->- `Rij` is the right endpoint of an observed interval, which takes the value NA for left-censored observations
->- `DL` is the left censoring indicator
->- `DI` is the interval censoring indicator
->- `X` is a covariate in the proportional hazards model, which can have multiple columns
->- `Z` is a covariate in the binomial model without an intercept, which can have multiple columns
-
+>- `Ti` is the exact failure time or censoring time
+>- `cen` is the right-censoring indicator
+>- `X` is the non-change-point covariate, which can have multiple columns
+>- `Z` is the univariate change-point variable
 
 <ins>**JointCSsurvEST**</ins>
 
