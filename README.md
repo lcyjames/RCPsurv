@@ -1,6 +1,6 @@
 # RCPsurv
 
-RCPSurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for right-censored data with a random change-point using the method proposed by Lee and Wong (202X) <DOI: [xx.xxxx/xxxx](https://doi.org/xxxx/xxxx)>.
+RCPsurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for right-censored data with a random change-point using the method proposed by Lee and Wong (202X) <DOI: [xx.xxxx/xxxx](https://doi.org/xxxx/xxxx)>.
 
 **JointCSsurv** relies on the R-packages `splines2`, `numDeriv`, `statmod`, which are hosted on CRAN.
 
