@@ -1,6 +1,6 @@
-# RCPSurv
+# RCPsurv
 
-RCPSurv (which stands for <ins>**Random**</ins> <ins>**change-point**</ins> <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: [10.1111/biom.13795](https://doi.org/10.1111/biom.13795)>.
+RCPSurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: [10.1111/biom.13795](https://doi.org/10.1111/biom.13795)>.
 
 **JointCSsurv** relies on the R-packages `splines2`, `numDeriv`, `statmod`, which are hosted on CRAN.
 
