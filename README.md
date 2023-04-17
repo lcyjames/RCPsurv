@@ -51,13 +51,12 @@ This data structure is as follows:
 >- `X` is the non-change-point covariate, which can have multiple columns
 >- `Z` is the univariate change-point variable
 
-<ins>**JointCSsurvEST**</ins>
+<ins>**RCPsurvEST**</ins>
 
 ```
-JointCSsurvEST(data, K = 7, P, Q, deg = 3, max.m, M = 20, tolerance = 10^{-3}, 
-               gam_0 = NA, beta_0 = NA, alpha_0 = NA, kappa_0 = NA, sigma_0 = NA, TRACE = FALSE)
+RCPsurvEST(data, P, m=10, tolerance=10^{-3}, gamma0=NA, beta0=NA, alpha10=NA, alpha20=NA, mu0=NA, sigma0=NA, TRACE=FALSE)
 ```
-This function performs the semiparametric estimation methods of Lee et al. (2022). The details of the arguments are as follows:
+This function performs the semiparametric estimation methods of Lee and Wong (2023+). The details of the arguments are as follows:
 >- `data` is a data.frame object shown in the above, with columns `id`, `cs`, `Lij`, `Rij`, `DL`,`DI`,`X[1]`,...,`X[P]`,`Z[1]`,...,`Z[Q-1]`
 >- `K` is the dimension of parameter gamma; the order of the I-splines equal to (`K`-`deg`+1); `K` must be greater than or equal to `deg`
 >- `P` is the dimension of covariate X in the proportional hazards model
@@ -75,8 +74,8 @@ This function performs the semiparametric estimation methods of Lee et al. (2022
 
 Example:
 ```
-Dataset<-JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma= 1)
-Result <-JointCSsurvEST(data = Dataset, K = 7, P = 1, Q = 2, deg = 3, max.m = 10, tolerance = 10^{-3}, M = 20, TRACE = FALSE)
+Dataset<-RCPsurvSIM(seed = 1234, n = 500, gamma = 0.5, beta = -1, alpha1 = 2, alpha2 = 1.5, mu = 1.5, sigma = 0.5)
+Result <-RCPsurvEST(data = Dataset, P = 1, gamma0 = 0.5, beta0 = -1, alpha10 = 2, alpha20 = 1.5, mu0 = 1.5, sigma0 = 0.5,TRACE = T)
 Result
 
 # $loglik
