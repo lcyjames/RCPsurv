@@ -1,6 +1,6 @@
 # RCPsurv
 
-RCPsurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for right-censored data with a random change-point using the method proposed by Lee and Wong (2023+) <DOI: [xx.xxxx/xxxx](https://doi.org/xxxx/xxxx)>.
+RCPsurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for right-censored data with a random change-point using the method proposed by Lee and Wong (2023+).
 
 # How to import the Functions #
 > install.packages("devtools")<br />
@@ -122,4 +122,4 @@ Result
 Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
 
 # Reference #
-Lee, C. Y.,& Wong, K. Y. (2023+). Survival analysis with a random change-point. Statistical Methods in Medical Research [online], DOI: [xx.xxxx/xxxx](https://doi.org/xx.xxxx/xxxx).
+Lee, C. Y.,& Wong, K. Y. (2023+). Survival analysis with a random change-point.
