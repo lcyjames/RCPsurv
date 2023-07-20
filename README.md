@@ -13,8 +13,8 @@ RCPsurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for 
 The package contains 2 functions:
 |Functions  | Description|
 |------------- | -------------|
-RCPsurvSIM  | Generate a data set according to the simulation study in Lee and Wong. (202X)
-RCPsurvEST  | Perform the semiparametric estimation methods of Lee and Wong. (202X)
+RCPsurvSIM  | Generate a data set according to the simulation study in Lee and Wong. (2023+)
+RCPsurvEST  | Perform the semiparametric estimation methods of Lee and Wong. (2023+)
 
 <ins>**RCPsurvSIM**</ins>
 
