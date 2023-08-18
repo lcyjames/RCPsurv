@@ -122,4 +122,4 @@ Result
 Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
 
 # Reference #
-Lee, C. Y.,& Wong, K. Y. (2023+). Survival analysis with a random change-point. Statistical Methods in Medical Research, DOI: 10.1177/09622802231192946
+Lee, C. Y.,& Wong, K. Y. (2023+). Survival analysis with a random change-point. Statistical Methods in Medical Research [online], DOI: [10.1177/09622802231192946](https://doi.org/10.1177/09622802231192946).
