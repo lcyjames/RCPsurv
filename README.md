@@ -21,7 +21,7 @@ RCPsurvEST  | Perform the semiparametric estimation methods of Lee and Wong. (20
 ```
 RCPsurvSIM(seed=NA, n, gamma, beta, alpha1, alpha2, mu, sigma)
 ```
-This function generates a data set according to the model under scenario I of the simulation study in Lee and Wong (2023+) that takes the arguments:
+This function generates a data set according to the model (scenario I shown here) of the simulation study in Lee and Wong (2023+) that takes the arguments:
 >- `n` is the sample size
 >- `gamma` is the coefficient of X
 >- `beta` is the 'baseline' coefficient of Z
