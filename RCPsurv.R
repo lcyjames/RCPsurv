@@ -7,7 +7,7 @@ RCPsurvSIM<-function(seed=NA,n,gamma,beta,alpha1,alpha2,mu,sigma){
   eta<-rnorm(n,mean = mu,sd = sigma)
   
   Ti.star    <-sqrt(-log(u1)/exp(gamma*X + beta*Z + alpha1*I(Z>=eta) + alpha2*I(Z>=eta)*(Z-eta)))
-  Ci         <-runif(n=n, min = 0,max = 5)  #rexp(n = n, rate=0.2)
+  Ci         <-runif(n=n, min = 0,max = 5)
   cen        <-ifelse(Ti.star<Ci,1,0)
   Ti         <-pmin(Ti.star,Ci)
   
