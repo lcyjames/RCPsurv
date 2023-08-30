@@ -33,8 +33,8 @@ This function generates a data set according to the model of the simulation stud
 Example:
 ```
 #This is the setting in Scenario I
-Dataset <- RCPsurvSIM(seed = 1234, n = 500, gamma = 0.5, beta = -1, alpha1 = 2, alpha2 = 1.5, mu = 1.5, sigma = 0.5)
-head(Dataset)
+Data <- RCPsurvSIM(seed = 1234, n = 500, gamma = 0.5, beta = -1, alpha1 = 2, alpha2 = 1.5, mu = 1.5, sigma = 0.5)
+head(Data)
 
 #   id Ti           cen X           Z
 # 1  1 0.004496932   0  1.334176034 1.435799
@@ -72,8 +72,8 @@ This function performs the semiparametric estimation methods of Lee and Wong (20
 
 Example:
 ```
-Dataset<-RCPsurvSIM(seed = 1234, n = 500, gamma = 0.5, beta = -1, alpha1 = 2, alpha2 = 1.5, mu = 1.5, sigma = 0.5)
-Result <-RCPsurvEST(data = Dataset, P = 1, gamma0 = 0.5, beta0 = -1, alpha10 = 2, alpha20 = 1.5, mu0 = 1.5, sigma0 = 0.5,TRACE = F)
+Data<-RCPsurvSIM(seed = 1234, n = 500, gamma = 0.5, beta = -1, alpha1 = 2, alpha2 = 1.5, mu = 1.5, sigma = 0.5)
+Result <-RCPsurvEST(data = Data, P = 1, gamma0 = 0.5, beta0 = -1, alpha10 = 2, alpha20 = 1.5, mu0 = 1.5, sigma0 = 0.5,TRACE = F)
 Result
 
 # $loglik
