@@ -5,8 +5,7 @@ RCPsurv (which stands for <ins>**Random**</ins> <ins>**Change-Point**</ins> for 
 # How to import the Functions #
 > install.packages("devtools")<br />
 > library(devtools) <br /> 
-> source_url("https://github.com/lcyjames/RCPsurv/blob/73b2b72df2abc89c62ed1618bfe11186524c8749/RCPsurv.R?raw=TRUE")
-
+> source_url("https://github.com/lcyjames/RCPsurv/blob/72382b5cbd7027e685c023e8892f79aab7cb7a8e/RCPsurv.R?raw=TRUE")
 
 
 # Usage #
