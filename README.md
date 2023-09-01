@@ -36,7 +36,7 @@ Example:
 Data <- RCPsurvSIM(seed = 1234, n = 500, gamma = 0.5, beta = -1, alpha1 = 2, alpha2 = 1.5, mu = 1.5, sigma = 0.5)
 head(Data)
 
-#   id Ti           cen X           Z
+#   id          Yi cen            X        Z
 # 1  1 0.004496932   0  1.334176034 1.435799
 # 2  2 0.015786129   1 -1.121502497 3.819158
 # 3  3 0.026820595   1  1.674326510 3.091647
@@ -47,7 +47,7 @@ head(Data)
 
 This data structure is as follows:
 >- `id` is the sample identifier
->- `Ti` is the exact failure time or censoring time
+>- `Yi` is the exact failure time or censoring time
 >- `cen` is the right-censoring indicator
 >- `X` is the non-change-point covariate, which can have multiple columns
 >- `Z` is the univariate change-point variable
@@ -58,7 +58,7 @@ This data structure is as follows:
 RCPsurvEST(data, P, m=10, tolerance=10^{-3}, gamma0=NA, beta0=NA, alpha10=NA, alpha20=NA, mu0=NA, sigma0=NA, TRACE=FALSE)
 ```
 This function performs the semiparametric estimation methods of Lee and Wong (2023+). The details of the arguments are as follows:
->- `data` is a data.frame object shown in the above, with columns `id`, `Ti`, `cen`, `X[1]`,...,`X[P]`, `Z`
+>- `data` is a data.frame object shown in the above, with columns `id`, `Yi`, `cen`, `X[1]`,...,`X[P]`, `Z`
 >- `P` is the dimension of covariate X, which is also equal to the dimension of gamma0
 >- `m` is the number of nodes used in the Gaussian quadrature rule for truncated normal distributions
 >- `tolerance` is the stopping criterion for the EM algorithm, set to 10^{-3} by default
@@ -66,7 +66,7 @@ This function performs the semiparametric estimation methods of Lee and Wong (20
 >- `beta0` is a constant for the initial value of parameter beta, set to be 0 by default (beta0=NA)
 >- `alpha10` is a constant for the initial value of parameter alpha1, set to be 0 by default (alpha10=NA)
 >- `alpha20` is a constant for the initial value of parameter alpha2, set to be 0 by default (alpha20=NA)
->- `mu0` is a constant for the initial value of parameter mu, set to be median of `Z` in `data` by default (mu0=NA)
+>- `mu0` is a constant for the initial value of parameter mu, set to be the median of `Z` in `data` by default (mu0=NA)
 >- `sigma0` is a constant for the initial value of parameter sigma, set to be 2 by default (sigma0=NA)
 >- `TRACE` is an option for tracking the converging path of the parameter estimation, set to be FALSE by default
 
