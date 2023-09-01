@@ -9,12 +9,12 @@ RCPsurvSIM<-function(seed=NA,n,gamma,beta,alpha1,alpha2,mu,sigma){
   Ti.star    <-sqrt(-log(u1)/exp(gamma*X + beta*Z + alpha1*I(Z>=eta) + alpha2*I(Z>=eta)*(Z-eta)))
   Ci         <-runif(n=n, min = 0,max = 5)
   cen        <-ifelse(Ti.star<Ci,1,0)
-  Ti         <-pmin(Ti.star,Ci)
+  Yi         <-pmin(Ti.star,Ci)
   
-  dat<-cbind(Ti,cen,X,Z)
+  dat<-cbind(Yi,cen,X,Z)
   dat<-cbind(c(1:n),dat[order(dat[,1]),])
   dat<-as.data.frame(dat)
-  names(dat)<-c("id","Ti","cen","X","Z")
+  names(dat)<-c("id","Yi","cen","X","Z")
   return(dat)
 }
 
