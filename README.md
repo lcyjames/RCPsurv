@@ -61,13 +61,13 @@ This function performs the semiparametric estimation methods of Lee and Wong (20
 >- `P` is the dimension of covariate X, which is also equal to the dimension of gamma0
 >- `m` is the number of nodes used in the Gaussian quadrature rule for truncated normal distributions
 >- `tolerance` is the stopping criterion for the EM algorithm, set to 10^{-3} by default
->- `gamma0` is a vector of constants of size `P` for the initial values of parameter gamma, set to be rep(0,P) by default (gamma0=NA)
->- `beta0` is a constant for the initial value of parameter beta, set to be 0 by default (beta0=NA)
->- `alpha10` is a constant for the initial value of parameter alpha1, set to be 0 by default (alpha10=NA)
->- `alpha20` is a constant for the initial value of parameter alpha2, set to be 0 by default (alpha20=NA)
+>- `gamma0` is a vector of constants of size `P` for the initial values of parameter gamma, set to rep(0,P) by default (gamma0=NA)
+>- `beta0` is a constant for the initial value of parameter beta, set to 0 by default (beta0=NA)
+>- `alpha10` is a constant for the initial value of parameter alpha1, set to 0 by default (alpha10=NA)
+>- `alpha20` is a constant for the initial value of parameter alpha2, set to 0 by default (alpha20=NA)
 >- `mu0` is a constant for the initial value of parameter mu, set to be the median of `Z` in `data` by default (mu0=NA)
->- `sigma0` is a constant for the initial value of parameter sigma, set to be 2 by default (sigma0=NA)
->- `TRACE` is an option for tracking the converging path of the parameter estimation, set to be FALSE by default
+>- `sigma0` is a constant for the initial value of parameter sigma, set to 2 by default (sigma0=NA)
+>- `TRACE` is an option for tracking the converging path of the parameter estimation, set to FALSE by default
 
 Example:
 ```
